@@ -1,0 +1,27 @@
+body > #root > div {
+  height: 100vh;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+*{
+  border: none;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in-out;
+}
+*:focus{
+  outline: none;
+}
+
+:root {
+  --red: #FE4465;
+  --white: #ffffff;
+  --fontBlack: #4A4A4A;
+}
