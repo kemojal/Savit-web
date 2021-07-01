@@ -2,9 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Transaction from '../Transaction'
 
+const TransanctionsContainer = styled.div`
+    padding: 0 120px;
+`
 export const TransactionLayout = ({transactions}) => {
     return (
-        <div>
+        <TransanctionsContainer>
             {
                 transactions.map(
                     (transaction, index) => {
@@ -14,6 +17,6 @@ export const TransactionLayout = ({transactions}) => {
                 }
                 )
             }
-        </div>
+        </TransanctionsContainer>
     )
 }

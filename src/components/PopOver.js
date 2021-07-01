@@ -15,7 +15,6 @@ const PopOverComponent  = styled.div`
     top: ${({ pop }) => (pop ? "30px" : "-30px")};
     right: ${({ pop }) => (pop ? "150px" : "100px")};
     opacity: ${({ pop }) => (pop ? "1" : "0")};
-   
 `
 
 const PopHeader = styled.div`
@@ -69,7 +68,8 @@ padding: 10%;
 .round{
     width: 32px;
     height: 32px;
-    background: #B9C3CE;
+    background: #4A4A4A;
+    color: white;
     border-radius: 32px;
     display: flex;
     align-items: center;

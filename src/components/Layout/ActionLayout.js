@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+
+import AddTransactionDialogue from '../AddTransactionDialogue';
+import Modal from '../Modal';
+
 const LayoutContainer = styled.div`
   padding: 30px 120px;
   display: flex;
@@ -44,7 +49,7 @@ const AddTransactionButton = styled.button`
   padding: 13px 24px;
   border-radius: 3px;
   margin-right: 10px;
-  box-shadow: 3px 3px rgba(0,0,0,0.05);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.05);
   span {
     padding-left: 10px;
     color: white;
@@ -57,12 +62,20 @@ const MoreButton = styled.button`
   font-size: 16px;
   padding: 13px 24px;
   border-radius: 3px;
-  box-shadow: 3px 3px rgba(0,0,200,0.02);
+  box-shadow: 3px 3px rgba(0, 0, 200, 0.02);
   span {
     padding-right: 10px;
   }
 `;
 const ActionLayout = () => {
+  const [TransactionDialogue, setTransactionDialogue] = useState(false);
+  const ShowTransactionDialogue = () => toggleModal(!TransactionDialogue);
+  const showAddTransactionDialogue = () => {
+    alert('wow');
+  };
+
+  const [isModalOpen, toggleModal] = useState(false);
+
   return (
     <LayoutContainer>
       <Left>
@@ -90,15 +103,22 @@ const ActionLayout = () => {
         </div>
       </Left>
       <Right>
-        <AddTransactionButton>
+        <AddTransactionButton onClick={ShowTransactionDialogue}>
           <FontAwesomeIcon icon={faPlus} />
           <span>Add Transaction</span>
         </AddTransactionButton>
         <MoreButton>
           <span>More</span>
-          <FontAwesomeIcon icon={faEllipsisH } />
+          <FontAwesomeIcon icon={faEllipsisH} />
         </MoreButton>
       </Right>
+      {/*  */}
+      <Modal isOpen={isModalOpen} toggle={toggleModal}>
+        <h1>test</h1>
+        <p>Other text that describes what is happening</p>
+        {/* <AddTransactionDialogue  stateCondition = {TransactionDialogue}/> */}
+        <button onClick={ShowTransactionDialogue}>toggle</button>
+      </Modal>
     </LayoutContainer>
   );
 };

@@ -14,7 +14,9 @@ const MainLayout = styled.div`
   background-color: #f4f8fa;
   width: 78vw;
   height: 100%;
-  padding: 0 30px;
+  padding: 15px 15px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 `;
 
 export default function App() {
@@ -32,6 +34,7 @@ export default function App() {
         <Header />
         <ActionLayout />
         <TransactionLayout transactions={transactions} />
+
       </MainLayout>
     </div>
   );

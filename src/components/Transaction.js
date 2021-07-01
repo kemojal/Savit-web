@@ -13,12 +13,16 @@ const TransactionLayout  = styled.div`
     .date{
         color: rgba(0,0,0,0.2)
     }
+    .title{
+        color: rgba(0,0,0,0.5);
+        font-size: 18px;
+    }
 `
 
 const Transaction = ({transaction}) => {
     return (
         <TransactionLayout key={transaction.id}>
-            <div>{transaction.title}</div>
+            <div className="title">{transaction.title}</div>
             <div className="date">{transaction.createdAt}</div>
             <div className="category">{transaction.category}</div>
             <div className="amount">{transaction.amount}</div>

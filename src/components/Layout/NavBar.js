@@ -16,6 +16,8 @@ const NavBarContainer = styled.div`
   color: var(--red);
   padding: 0 120px;
   position: relative;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 `;
 
 const LeftNavBar = styled.div`
